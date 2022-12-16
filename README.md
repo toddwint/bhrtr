@@ -13,11 +13,14 @@ GitHub: <https://github.com/toddwint/bhrtr>
 
 - Download the docker image and github files.
 - Configure the settings in `run/config.txt`.
-- Start a new container by running `run/create_container.sh`. The folder `upload` will be created as specified in the `create_container.sh` script.
+- Start a new container by running `run/create_container.sh`. 
+  - The folder `upload` will be created as specified in the `create_container.sh` script.
 - An example CSV file `bkhl.csv` is created in the `upload` volume on the first run.
 - Fill in the file `upload/bkhl.csv`.
-- Modify it as you need (additional columns can be added after the last column) and place it back in the same folder with the same name.
-- Trigger the container to update by restarting it with `./restart.sh`, `./stop.sh` and `./start.sh`. You can also run `./delete_container` followed by `./create_container` as the `upload` folder will not be removed automatically.
+- Modify it as you need, and place it back in the same folder with the same name.
+  - Additional columns can be added after the last column.
+- Trigger the container to update by restarting it with `./restart.sh` or `./stop.sh` and `./start.sh`. 
+  - You can also run `./delete_container` followed by `./create_container` as the `upload` folder will not be removed automatically.
 - Open the file webadmin.html to view messages in a web browser.
 
 
@@ -60,7 +63,7 @@ IPADDR=169.254.255.254
 # The IP address that will be set on the host to manage the docker container
 MGMTIP=169.254.255.253
 
-# The IP subnet in the form subnet/cidr
+# The IP subnet in the form NETWORK/PREFIX
 SUBNET=169.254.255.240/28
 
 # The IP of the gateway. 
