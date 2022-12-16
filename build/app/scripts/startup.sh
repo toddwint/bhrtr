@@ -23,6 +23,7 @@ fi
 if [ -e /opt/"$APPNAME"/scripts/.firstrun ]; then
     ln -s /opt/"$APPNAME"/scripts/tail.sh /opt/"$APPNAME"/debug
     ln -s /opt/"$APPNAME"/scripts/tmux.sh /opt/"$APPNAME"/debug
+    ln -s /opt/"$APPNAME"/scripts/ipcalc.py /opt/"$APPNAME"/debug
     ln -s /opt/"$APPNAME"/scripts/ip-addrs-and-routes-add /opt/"$APPNAME"/debug
 fi
 
