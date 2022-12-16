@@ -9,6 +9,18 @@ Docker Hub: <https://hub.docker.com/r/toddwint/bhrtr>
 GitHub: <https://github.com/toddwint/bhrtr>
 
 
+## Overview
+
+- Download the docker image and github files.
+- Configure the settings in `run/config.txt`.
+- Start a new container by running `run/create_container.sh`. The folder `upload` will be created as specified in the `create_container.sh` script.
+- An example CSV file `bkhl.csv` is created in the `upload` volume on the first run.
+- Fill in the file `upload/bkhl.csv`.
+- Modify it as you need (additional columns can be added after the last column) and place it back in the same folder with the same name.
+- Trigger the container to update by restarting it with `./restart.sh`, `./stop.sh` and `./start.sh`. You can also run `./delete_container` followed by `./create_container` as the `upload` folder will not be removed automatically.
+- Open the file webadmin.html to view messages in a web browser.
+
+
 ## Features
 
 - Ubuntu base image

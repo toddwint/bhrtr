@@ -43,7 +43,7 @@ if not csv_filename.exists():
     raise(Exception(f'{msg}'))
 
 csvlist = list(csv.reader(csv_filename.read_text().rstrip().split('\n')))
-l = sorted(set((h,a,g,m) for h,a,g,m in csvlist[1:] if all((h,a,g,m))))
+l = sorted(set((h,a,g,m) for h,a,g,m,*_ in csvlist[1:] if all((h,a,g,m))))
 addrs = tuple(f'# {h}\nip addr add {g}/{m} dev eth0' for h,a,g,m in l)
 routes = tuple(f'# {h}\nip route add {a} via {g}' for h,a,g,m in l)
 # Acceptable formats
@@ -52,7 +52,6 @@ routes = tuple(f'# {h}\nip route add {a} via {g}' for h,a,g,m in l)
 
 print('Adding addrs...')
 for addr in addrs:
-    #print(addr)
     rval = subprocess.run(addr,
         shell=True,
         universal_newlines=True,
@@ -62,7 +61,6 @@ for addr in addrs:
 
 print('Adding routes...')
 for route in routes:
-    #print(route)
     rval = subprocess.run(route,
         shell=True,
         universal_newlines=True,
