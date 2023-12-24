@@ -1,0 +1,82 @@
+[
+ [
+  "Launch tmux",
+  "/opt/bhrtr/scripts/tmux.sh"
+ ],
+ [
+  "Search logs",
+  [
+   [
+    "bhrtr log",
+    "tail -F -n +1 /opt/bhrtr/logs/bhrtr.log | fzf --tac --no-sort"
+   ]
+  ]
+ ],
+ [
+  "View logs",
+  [
+   [
+    "bhrtr log",
+    "more /opt/bhrtr/logs/bhrtr.log"
+   ]
+  ]
+ ],
+ [
+  "View configuration",
+  [
+   [
+    "bkhl.csv",
+    "column.py /opt/bhrtr/upload/bkhl.csv | more"
+   ],
+   [
+    "IP addresses",
+    "ip addr show | more"
+   ],
+   [
+    "Routing table",
+    "ip route show | more"
+   ],
+   [
+    "ARP or NDISC cache",
+    "ip neighbor show | more"
+   ],
+   [
+    "Network devices",
+    "ip link show | more"
+   ]
+  ]
+ ],
+ [
+  "Debug scripts",
+  [
+   [
+    "Add addresses and routes from bkhl.csv",
+    "ip-addrs-and-routes-add"
+   ],
+   [
+    "Show processes",
+    "ps ax | more"
+   ],
+   [
+    "Show sockets",
+    "ss --all --numeric --processes | more"
+   ],
+   [
+    "ttyd1 log",
+    "more /opt/bhrtr/logs/ttyd1.log"
+   ],
+   [
+    "ttyd2 log",
+    "more /opt/bhrtr/logs/ttyd2.log"
+   ],
+   [
+    "frontail log",
+    "more /opt/bhrtr/logs/frontail.log"
+   ],
+   [
+    "tailon log",
+    "more /opt/bhrtr/logs/tailon.log"
+   ]
+  ]
+ ]
+]
