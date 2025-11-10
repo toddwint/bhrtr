@@ -46,8 +46,8 @@ remove:
 .PHONY: git-release-push
 git-release-push:
 	gh release create \
-		"${repo_name}-${version}" \
+		"${version}" \
 		--latest \
 		--notes-file release_notes.md \
 		--generate-notes \
-		--title "${repo_name}-${version}" \
+		--title "${version}" \
