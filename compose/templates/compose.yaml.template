@@ -2,7 +2,7 @@ name: ${HOSTNAME}
 
 services:
   bhrtr:
-    image: toddwint/bhrtr
+    image: toddwint/${APPNAME}
     hostname: ${HOSTNAME}
     ports:
         - "${IPADDR}:${HTTPPORT1}:${HTTPPORT1}"
